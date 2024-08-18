@@ -1,0 +1,30 @@
+﻿<Window x:Class="RemoteFileManager.Views.RenameDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RemoteFileManager.Views"
+        xmlns:viewModels="clr-namespace:RemoteFileManager.ViewModels"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=viewModels:RenameDialogViewModel}"
+        Title="{Binding DialogPurpose}" Height="175" Width="500" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding RenameMessage}"/>
+
+        <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding NewName}" HorizontalAlignment="Stretch" Margin="5"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+            <Button Content="OK" Click="Ok_Clicked" Margin="2,5,2,5" Padding="15,2,15,2"/>
+            <Button Content="Cancel" Click="Cancel_Clicked" Margin="2,5,2,5" Padding="15,2,15,2"/>
+        </StackPanel>
+    </Grid>
+</Window>

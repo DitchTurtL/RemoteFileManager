@@ -1,0 +1,32 @@
+﻿<Window x:Class="RemoteFileManager.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RemoteFileManager"
+        xmlns:viewModels="clr-namespace:RemoteFileManager.ViewModels"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=viewModels:MainWindowViewModel}"
+        Title="RFM" Height="400" Width="300" FontSize="22" ResizeMode="CanMinimize">
+    <Grid>
+        <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Stretch" Margin="5">
+            <!-- Hostname -->
+            <TextBlock Text="Host" Margin="0,2,0,0"/>
+            <TextBox Text="{Binding HostName, Mode=TwoWay}" HorizontalAlignment="Stretch"/>
+            <!-- Port -->
+            <TextBlock Text="Port" Margin="0,2,0,0"/>
+            <TextBox Text="{Binding Port, Mode=TwoWay}" HorizontalAlignment="Stretch"/>
+            <!-- Username -->
+            <TextBlock Text="Username" Margin="0,2,0,0"/>
+            <TextBox Text="{Binding Username, Mode=TwoWay}" HorizontalAlignment="Stretch"/>
+            <!-- Password -->
+            <TextBlock Text="Password" Margin="0,2,0,0"/>
+            <PasswordBox PasswordChanged="PasswordBox_PasswordChanged" HorizontalAlignment="Stretch"/>
+            <!-- Base Path -->
+            <TextBlock Text="Base Path" Margin="0,2,0,0"/>
+            <TextBox Text="{Binding BasePath, Mode=TwoWay}" HorizontalAlignment="Stretch"/>
+            
+            <Button Content="New Node" Command="{Binding NewNodeCommand}" Margin="0,5,0,0" HorizontalAlignment="Right" />
+        </StackPanel>
+    </Grid>
+</Window>
